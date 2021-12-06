@@ -1,0 +1,10 @@
+---
+version: 1
+applications:
+- name: node-red-dock
+  memory: 256M
+  instances: 1
+buildpacks:
+      - nodejs_buildpack
+routes:
+  - route: node-red-dock.mybluemix.net
