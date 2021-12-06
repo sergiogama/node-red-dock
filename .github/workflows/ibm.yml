@@ -1,0 +1,17 @@
+name: Deploy to IBM Cloud Foundry
+on:
+  push:
+    branches: [ master ]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Deploy to IBM Cloud Foundry
+        # You may pin to the exact commit or the version.
+        uses: IBM/cloudfoundry-deploy@master
+        with:
+          IBM_CLOUD_API_KEY: ApiKey-239c02cb-80c8-43a6-9727-e525035c688f
+          IBM_CLOUD_CF_API: api.us-south.cf.cloud.ibm.com
+          IBM_CLOUD_CF_ORG: gama.developer@outlook.com
+          IBM_CLOUD_CF_SPACE: dev
